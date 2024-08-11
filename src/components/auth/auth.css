@@ -1,0 +1,40 @@
+.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.auth form{
+    box-sizing: border-box;
+    padding: 50px;
+    gap:50px;
+    width:50%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px gray;
+}
+.auth form label{
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+.auth form input{
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.auth form button{
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background-color: rgb(48, 44, 44);
+    color: white;
+    cursor: pointer;
+}
+.auth form button:hover{
+    background-color: black;
+}

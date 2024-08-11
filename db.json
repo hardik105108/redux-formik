@@ -1,0 +1,90 @@
+{
+  "bank": [
+    {
+      "bankName": "a titlexvv",
+      "id": "1"
+    },
+    {
+      "bankName": "anoer titleccxc",
+      "id": "2"
+    },
+    {
+      "bankName": "sadsads",
+      "id": "ivSwA7_"
+    },
+    {
+      "bankName": "opop",
+      "id": "inXuB0_"
+    },
+    {
+      "bankName": "dena bankk",
+      "id": "Axflzv-"
+    },
+    {
+      "bankName": "axis bank",
+      "id": "F9nUr2Q"
+    }
+  ],
+  "network": [
+    {
+      "id": "1",
+      "networkName": "a comment about post 1"
+    },
+    {
+      "networkName": "sadsd",
+      "id": "5_VHpre"
+    },
+    {
+      "networkName": "BSNL",
+      "id": "SdpSo5p"
+    }
+  ],
+  "category": [
+    {
+      "categoryName": "dsd",
+      "id": "1"
+    },
+    {
+      "categoryName": "sadsd",
+      "id": "2"
+    },
+    {
+      "categoryName": "nm",
+      "id": "3"
+    },
+    {
+      "categoryName": "nmmn",
+      "id": "vHBZAr8"
+    },
+    {
+      "categoryName": "uiyiy",
+      "id": "VV3W8JB"
+    },
+    {
+      "categoryName": "dsdsdsdsd",
+      "id": "ecB2kNy"
+    },
+    {
+      "categoryName": "Airtel",
+      "bankId": "Axflzv-",
+      "networksId": "SdpSo5p",
+      "id": "6xxToI4"
+    },
+    {
+      "categoryName": "x1",
+      "bankId": "ivSwA7_",
+      "networksId": "SdpSo5p",
+      "bankName": "sadsads",
+      "networkName": "BSNL",
+      "id": "s7B_WWa"
+    },
+    {
+      "categoryName": "kk2",
+      "bankId": "Axflzv-",
+      "networksId": "SdpSo5p",
+      "bankName": "dena bank",
+      "networkName": "BSNL",
+      "id": "F5CNvln"
+    }
+  ]
+}
