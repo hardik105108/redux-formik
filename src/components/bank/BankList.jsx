@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Table } from "react-bootstrap";
+import { Button, Table, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import {
@@ -13,6 +13,7 @@ import BankModal from "../modal/BankModal";
 const BankList = () => {
   const dispatch = useDispatch();
   const banks = useSelector((state) => state.bank.banks);
+  const loading = useSelector((state) => state.loading.loading);
   const [show, setShow] = useState(false);
   const [editingBank, setEditingBank] = useState(null);
 
@@ -33,6 +34,7 @@ const BankList = () => {
     } else {
       await dispatch(addBank(values));
     }
+    handleClose(); 
   };
 
   return (
@@ -41,46 +43,54 @@ const BankList = () => {
       <Button variant="primary" onClick={handleShow}>
         Add
       </Button>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Bank Name</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {banks.map((bank, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{bank.bankName}</td>
-              <td>
-                <Button
-                  variant="warning"
-                  onClick={() => {
-                    setEditingBank(bank);
-                    handleShow();
-                  }}
-                >
-                  Edit
-                </Button>{" "}
-                <Button
-                  variant="danger"
-                  onClick={() => dispatch(deleteBank(bank.id))}
-                >
-                  Delete
-                </Button>
-              </td>
+
+      {loading ? (
+        <div style={{ textAlign: "center", margin: "20px 0" }}>
+          <Spinner animation="border" variant="primary" />
+        </div>
+      ) : (
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Bank Name</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {banks.map((bank, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{bank.bankName}</td>
+                <td>
+                  <Button
+                    variant="warning"
+                    onClick={() => {
+                      setEditingBank(bank);
+                      handleShow();
+                    }}
+                  >
+                    Edit
+                  </Button>{" "}
+                  <Button
+                    variant="danger"
+                    onClick={() => dispatch(deleteBank(bank.id))}
+                  >
+                    Delete
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      )}
 
       <BankModal
         show={show}
         handleClose={handleClose}
         editingBank={editingBank}
         onSubmit={handleSubmit}
+        loading={loading}  
       />
     </div>
   );

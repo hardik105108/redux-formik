@@ -6,6 +6,11 @@ export const fetchcategorys = createAsyncThunk('category/fetchcategorys', async 
     return categorys;
 });
 
+export const fetchCategoryById = createAsyncThunk('category/fetchCategoryById', async (id) => {
+    const category = await apiService.getOne('category', id);
+    return category;
+});
+
 export const addcategory = createAsyncThunk('category/addcategory', async (categoryData) => {
     const newcategory = await apiService.create('category', categoryData);
     return newcategory;
@@ -39,6 +44,17 @@ const categorySlice = createSlice({
                 state.categorys = action.payload;
             })
             .addCase(fetchcategorys.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
+            })
+            .addCase(fetchCategoryById.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(fetchCategoryById.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+                state.selectedCategory = action.payload;
+            })
+            .addCase(fetchCategoryById.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
             })

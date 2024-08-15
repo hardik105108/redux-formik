@@ -1,7 +1,7 @@
 {
   "bank": [
     {
-      "bankName": "a titlexvv",
+      "bankName": "a titlexv",
       "id": "1"
     },
     {
@@ -23,12 +23,20 @@
     {
       "bankName": "axis bank",
       "id": "F9nUr2Q"
+    },
+    {
+      "bankName": "xz",
+      "id": "B1K-2Jk"
+    },
+    {
+      "bankName": "mnjd",
+      "id": "VeQm26t"
     }
   ],
   "network": [
     {
-      "id": "1",
-      "networkName": "a comment about post 1"
+      "networkName": "a aout post 1",
+      "id": "1"
     },
     {
       "networkName": "sadsd",
@@ -37,6 +45,10 @@
     {
       "networkName": "BSNL",
       "id": "SdpSo5p"
+    },
+    {
+      "networkName": "c",
+      "id": "EfV1MNb"
     }
   ],
   "category": [
